@@ -1,0 +1,4 @@
+interface Continent{
+name: String;
+
+}
