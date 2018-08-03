@@ -41,8 +41,8 @@ export class AdministratorComponent implements OnInit {
       data =>
       // { this.continents = data}
       {
-        this.id = data[1].id;
-        this.nameT = data[1].name;
+        this.id = data[0].id;
+        this.nameT = data[0].name;
       },
       err => console.error(err),
       () => console.log('done loading continents')
