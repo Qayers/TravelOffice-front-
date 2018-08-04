@@ -5,41 +5,33 @@ import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { ContinentService } from '../continent.service';
 import { Continent } from '../model/continent';
+import { ContinentSeries } from '../model/ContinentSeries';
 
 @Component({
   selector: 'app-administrator',
   templateUrl: './administrator.component.html',
   styleUrls: ['./administrator.component.css']
 })
-export class AdministratorComponent implements OnInit {
+export class AdministratorComponent {
 
-  public continents;
+  public continents :ContinentSeries;
   public continent_name;
   public nameT;
   public id;
 
   constructor(private continentService: ContinentService) { }
 
-  continent: Continent;
-  ngOnInit() {
-  }
-
-  // add(name: string): void {
-  //   name = name.trim();
-  //   if (!name) { return; }
-  //   this.continentService.addContinent({ name } as Continent)
-  //     .subscribe(continent => {
-  //       this.continents.push(continent);
-  //     });
-  // }
+continent = this.getContinent();
+ // continent: Continent;
+  
 
   getContinent() {
     this.continentService.getContinent().subscribe(
-      data =>
-      // { this.continents = data}
-      {
-        this.id = data[0].id;
-        this.nameT = data[0].name;
+      data => {
+        this.continents = data;
+
+        // this.id = data[0].id;
+        // this.nameT = data[0].name;
       },
       err => console.error(err),
       () => console.log('done loading continents')
@@ -54,8 +46,6 @@ export class AdministratorComponent implements OnInit {
         data => {
           console.log(data);
           this.continent_name = name;
-          // this.getContinent();
-          // return true;
         },
         error => {
           console.error("error with saving continent");
