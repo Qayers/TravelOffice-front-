@@ -1,0 +1,26 @@
+<p>
+
+  Dodaj nowy kraj:
+  <input type="text" name="country_name" [(ngModel)]="name">
+  <button (click)="countryService.addCountry(name)">zapisz</button>
+</p>
+
+<label for="continentName">Wybierz kontynent: </label>
+<select name="continents" class="form-control">
+  <option value="0">wybierz kontynent</option>
+  <option *ngFor="let continent of continentService.continents" [ngValue]="continent">{{continent.name}}</option>
+</select>
+<div>
+  <nav>
+    <a class="btn btn-link" routerLink="administrator/city-add/country-add/continent-add">dodaj nowy kontynent</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+
+<p>
+  <button (click)="goBack()" class="btn btn-success">powrót</button>
+
+  <a class="btn btn-success" routerLink=''>powrót do strony głównej</a>
+
+</p>

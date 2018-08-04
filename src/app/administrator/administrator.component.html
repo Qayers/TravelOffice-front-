@@ -37,6 +37,18 @@
 
 
         </li>
+          <li>
+          <label for="citytoName">Wybierz miasto docelowe:</label>
+          <select name="cities" class="form-control">
+              <option value="0">wybierz miasto</option>
+              <option *ngFor="let city of cityService.cities" [ngValue]="city">{{city.name}}</option>
+            </select>
+            <div>
+                <nav>
+                    <a class="btn btn-link" routerLink="/administrator/city-add">dodaj nowe miasto</a>
+                  </nav>
+                  <router-outlet></router-outlet>
+            </div>  
         <li>
           <label for="id_airportto">wybierz lotnisko docelowe:</label>
 
@@ -47,42 +59,21 @@
 
 
         </li>
-        <li>
-          <label for="citytoName">Wybierz miasto docelowe:</label>
-
-
-        </li>
-
+  <li>
+      <label for="promotion">Promocja:</label>
+      <input type="number"class="form-control">
+  </li>
       </ul>
-
-
-      <label for="continentName">Wybierz kontynent: </label>
-      <select name="continents" class="form-control">
-        <option value="0">wybierz kontynent</option>
-        <option *ngFor="let continent of continentService.continents" [ngValue]="continent">{{continent.name}}</option>
-      </select>
     </div>
     <button type="submit" class="btn btn-success">dodaj</button>
   </form>
 </div>
-
-
-<p>Dodaj nowy kontynent:
-  <input type="text" name="continent_name" [(ngModel)]="name">
-  <button (click)="addContinent(name)">Save</button>
-</p>
-<div>
-  dodawany kontynent: {{name}}
-</div>
-<p></p>
-<div>
-
-
-  <button class="primary" (click)="getContinent()">GetCont</button>
-  Continent: {{id}} {{nameT}}
-
-</div>
-
+<br>
 <p>
-  <a class="btn btn-link" routerLink=''>powrót</a>
+  <a class="btn btn-success" routerLink=''>powrót</a>
 </p>
+
+
+
+
+<p></p>

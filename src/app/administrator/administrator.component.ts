@@ -6,7 +6,11 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { ContinentService } from '../continent.service';
 import { Continent } from '../model/continent';
 import { ContinentSeries } from '../model/ContinentSeries';
-// import {GetEntities} from '../getEntities';
+import {CitySeries} from '../model/CitySeries';
+import { CityService } from '../city.service';
+import { CountrySeries } from '../model/CountrySeries';
+import { CountryService } from '../country.service';
+
 @Component({
   selector: 'app-administrator',
   templateUrl: './administrator.component.html',
@@ -15,29 +19,16 @@ import { ContinentSeries } from '../model/ContinentSeries';
 export class AdministratorComponent {
 
   public continents :ContinentSeries;
-  public continent_name;
-  public nameT;
-  public id;
+  public cities:CitySeries;
+  public countries:CountrySeries;
 
-  constructor(private continentService: ContinentService) { }
+
+  constructor(private continentService: ContinentService, private cityService: CityService, private countryService: CountryService) { }
 
 continent = this.continentService.getContinent();
+city = this.cityService.getCity();
+country= this.countryService.getCountry(); 
 
-
-  // addContinent(name) {
-  //   let continent = { name: name };
-  //   this.continentService.addContinent(continent)
-  //     .subscribe(
-  //       data => {
-  //         console.log(data);
-  //         this.continent_name = name;
-  //       },
-  //       error => {
-  //         console.error("error with saving continent");
-  //         return Observable.throw(error);
-  //       }
-  //     )
-  // }
 
 }
 

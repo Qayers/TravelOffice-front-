@@ -7,6 +7,9 @@ import { WycieczkiLokalneComponent } from './wycieczki-lokalne/wycieczki-lokalne
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { RegulaminComponent } from './regulamin/regulamin.component';
 import { AppComponent } from './app.component';
+import { ContinentAddComponent } from './continent-add/continent-add.component';
+import { CountryAddComponent } from './country-add/country-add.component';
+import { CityAddComponent } from './city-add/city-add.component';
 
 
 const routes: Routes = [
@@ -14,8 +17,11 @@ const routes: Routes = [
   { path: 'last-minute', component: LastMinuteComponent },
   { path: 'wycieczki-lokalne', component: WycieczkiLokalneComponent },
   { path: 'kontakt', component: KontaktComponent },
-  { path: 'regulamin', component: RegulaminComponent},
-  { path: '',redirectTo:'', pathMatch:'full'}
+  { path: 'regulamin', component: RegulaminComponent },
+  { path: 'administrator/city-add/country-add/continent-add', component: ContinentAddComponent },
+  { path: 'administrator/city-add/country-add', component: CountryAddComponent },
+  { path: 'administrator/city-add', component: CityAddComponent },
+  { path: '', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

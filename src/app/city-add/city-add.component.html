@@ -1,0 +1,23 @@
+
+<label for="countryName">Wybierz kraj: </label>
+<select name="countries" class="form-control">
+    <option value="0">wybierz kraj</option>
+    <option *ngFor="let country of countryService.countries" [ngValue]="country">{{country.name}}</option>
+  </select>
+
+            
+            
+
+
+<div>
+    <nav>
+        <a class="btn btn-link" routerLink="/administrator/city-add/country-add">dodaj nowy kraj</a>
+      </nav>
+      <router-outlet></router-outlet>
+</div>  
+<p>
+    <button (click)="goBack()" class="btn btn-success">powrót</button>
+  
+    <a class="btn btn-success" routerLink=''>powrót do strony głównej</a>
+  
+  </p>
