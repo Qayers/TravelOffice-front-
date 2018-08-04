@@ -10,12 +10,25 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class CountryService {
+
+  public countries:CountrySeries;
 
   constructor(private http: HttpClient) {}
     
-    getCountry() {
+    getHttpCountry() {
       return this.http.get<CountrySeries>('http://localhost:8080/country');
     }
-   }
-
+   
+   getCountry() {
+    this.getHttpCountry().subscribe(
+      data =>
+      {
+        this.countries=data;
+      },
+      err => console.error(err),
+      () => console.log('done loading continents')
+    );
+  } 
+}

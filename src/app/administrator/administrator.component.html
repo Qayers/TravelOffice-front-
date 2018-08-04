@@ -59,7 +59,7 @@
       <label for="continentName">Wybierz kontynent: </label>
       <select name="continents">
         <option value="0">wybierz kontynent</option>
-        <option *ngFor="let continent of continents" [ngValue]="continent">{{continent.name}}</option>
+        <option *ngFor="let continent of continentService.continents" [ngValue]="continent">{{continent.name}}</option>
       </select>
     </div>
     <button type="submit" class="btn btn-success">dodaj</button>
@@ -76,7 +76,7 @@
 </div>
 <p></p>
 <div>
-
+  
 
     <button class="primary" (click)="getContinent()">GetCont</button>
     Continent: {{id}} {{nameT}}
