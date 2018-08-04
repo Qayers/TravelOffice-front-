@@ -3,61 +3,61 @@
 <div>
   <form (ngSubmit)="onSubmit()" #tripForm="ngForm">
     <div class="form-group">
-<ul>
-<li>
-   <label for="count_of_days">Liczba dni</label>
-   <input type="text">
-</li>
-<li>
-   <label for="count_of_person>">Liczba osób</label>
-   <input type="text">
-</li>
-<li>
-  <label for="departure_date">Data wylotu:</label>
-  <input type="date">
-</li>
-<li>
-   <label for="return_date">Data powrotu:</label>
-   <input type="date">
-</li>
-<li>
-   <label for="description">Opis:</label>
-   <input type="text">
-</li>
-<li>
-  <label for="price_for_adult">Cena dla dorosłych:</label>
-  <input type="number">
-</li>
-<li>
-   <label for="price_for_child">Cena da dzieci:</label>
-   <input type="number">
-</li>
-<li>
-   <label for="id_airportfrom">Wybierz lotnisko wylotu:</label>
+      <ul>
+        <li>
+          <label for="count_of_days">Liczba dni</label>
+          <input type="text" class="form-control">
+        </li>
+        <li>
+          <label for="count_of_person>">Liczba osób</label>
+          <input type="text"class="form-control">
+        </li>
+        <li>
+          <label for="departure_date">Data wylotu:</label>
+          <input type="date"class="form-control">
+        </li>
+        <li>
+          <label for="return_date">Data powrotu:</label>
+          <input type="date"class="form-control">
+        </li>
+        <li>
+          <label for="description">Opis:</label>
+          <input type="text"class="form-control">
+        </li>
+        <li>
+          <label for="price_for_adult">Cena dla dorosłych:</label>
+          <input type="number"class="form-control">
+        </li>
+        <li>
+          <label for="price_for_child">Cena da dzieci:</label>
+          <input type="number"class="form-control">
+        </li>
+        <li>
+          <label for="id_airportfrom">Wybierz lotnisko wylotu:</label>
 
 
-</li>
-<li>
-  <label for="id_airportto">wybierz lotnisko docelowe:</label>
+        </li>
+        <li>
+          <label for="id_airportto">wybierz lotnisko docelowe:</label>
 
 
-</li>
-<li>
-   <label for="id_hotel">Wybierz hotel</label>
+        </li>
+        <li>
+          <label for="id_hotel">Wybierz hotel</label>
 
 
-</li>
-<li>
-  <label for="citytoName">Wybierz miasto docelowe:</label>
+        </li>
+        <li>
+          <label for="citytoName">Wybierz miasto docelowe:</label>
 
 
-</li>
+        </li>
 
-</ul>
+      </ul>
 
-  
+
       <label for="continentName">Wybierz kontynent: </label>
-      <select name="continents">
+      <select name="continents" class="form-control">
         <option value="0">wybierz kontynent</option>
         <option *ngFor="let continent of continentService.continents" [ngValue]="continent">{{continent.name}}</option>
       </select>
@@ -76,10 +76,10 @@
 </div>
 <p></p>
 <div>
-  
 
-    <button class="primary" (click)="getContinent()">GetCont</button>
-    Continent: {{id}} {{nameT}}
+
+  <button class="primary" (click)="getContinent()">GetCont</button>
+  Continent: {{id}} {{nameT}}
 
 </div>
 
