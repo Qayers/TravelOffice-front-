@@ -14,6 +14,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ContinentService {
+  
+  public continents :ContinentSeries;
 
   constructor(private http: HttpClient) { }
 
@@ -23,8 +25,21 @@ export class ContinentService {
 
   }
 
-  getContinent() {
+  getHttpContinent() {
     return this.http.get<ContinentSeries>('http://localhost:8080/continent');
   }
+
+  getContinent() {
+    this.getHttpContinent().subscribe(
+      data => {
+        this.continents = data;
+      },
+      err => console.error(err),
+      () => console.log('done loading continents')
+    );
+  }
+
+
+
 
 }

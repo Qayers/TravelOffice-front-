@@ -22,25 +22,25 @@ export class BrowserComponent implements OnInit {
   public countries:CountrySeries;
   public cities:CitySeries;
   public hotels:HotelSeries;
-  
+    
   
   constructor(private continentService: ContinentService, private countryService: CountryService,private cityService: CityService,private hotelService: HotelService) {}
 
-    continent = this.getContinent();
+    continent = this.continentService.getContinent();
     country = this.getCountry();
     city =this.getCity();
     hotel =this.getHotel();
 
-    getContinent() {
-      this.continentService.getContinent().subscribe(
-        data =>
-        {
-          this.continents=data;
-        },
-        err => console.error(err),
-        () => console.log('done loading continents')
-      );
-    }  
+    // getContinent() {
+    //   this.continentService.getContinent().subscribe(
+    //     data =>
+    //     {
+    //       this.continents=data;
+    //     },
+    //     err => console.error(err),
+    //     () => console.log('done loading continents')
+    //   );  
+    // }  
     getCountry() {
       this.countryService.getCountry().subscribe(
         data =>

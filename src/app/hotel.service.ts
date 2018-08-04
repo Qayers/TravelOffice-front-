@@ -15,6 +15,6 @@ export class HotelService {
   constructor(private http: HttpClient) { }
   getHotel() {
   return this.http.get<HotelSeries>('http://localhost:8080/hotel');
-
+ 
 }
 }
