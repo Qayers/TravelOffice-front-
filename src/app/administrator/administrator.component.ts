@@ -3,12 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-
 import { ContinentService } from '../continent.service';
-
 import { Continent } from '../model/continent';
 import { ContinentSeries } from '../model/ContinentSeries';
-
 
 @Component({
   selector: 'app-administrator',

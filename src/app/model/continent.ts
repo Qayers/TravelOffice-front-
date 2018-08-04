@@ -1,5 +1,4 @@
 export class Continent{
-    id: number;
-    name: String;
-
+    public id: number;
+    public name: String;
 }

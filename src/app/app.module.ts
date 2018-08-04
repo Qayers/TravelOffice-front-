@@ -12,6 +12,7 @@ import { WycieczkiLokalneComponent } from './wycieczki-lokalne/wycieczki-lokalne
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { RegulaminComponent } from './regulamin/regulamin.component';
 import { TitleComponent } from './title/title.component';
+import { BrowserComponent } from './browser/browser.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { TitleComponent } from './title/title.component';
     WycieczkiLokalneComponent,
     KontaktComponent,
     RegulaminComponent,
-    TitleComponent
+    TitleComponent,
+    BrowserComponent
    
   ],
   imports: [
