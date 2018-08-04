@@ -10,11 +10,25 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class HotelService {
 
+  public hotels:HotelSeries;
+  
   constructor(private http: HttpClient) { }
-  getHotel() {
+  
+  getHttpHotel() {
   return this.http.get<HotelSeries>('http://localhost:8080/hotel');
- 
+}
+
+getHotel() {
+  this.getHttpHotel().subscribe(
+    data =>
+    {
+      this.hotels=data;
+    },
+    err => console.error(err),
+    () => console.log('done loading continents')
+  );
 }
 }
