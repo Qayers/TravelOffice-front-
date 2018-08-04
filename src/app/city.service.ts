@@ -27,7 +27,7 @@ export class CityService {
         this.cities=data;
       },
       err => console.error(err),
-      () => console.log('done loading continents')
+      () => console.log('done loading cities')
     );
   }
 }
