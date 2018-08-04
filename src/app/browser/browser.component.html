@@ -1,0 +1,38 @@
+<div class="row justify-content-center" >
+    
+  <div class="col" style="width: 24%" class="justify-content-center">
+        <select name="continents">
+          <option value="0">Kontynenty</option>
+          <option *ngFor= "let cont of continents" [ngValue]="cont">
+          {{cont.name}}</option>  
+          
+        </select>
+        
+    </div>
+    <div class="col" style="width: 24%"  class="justify-content-center">
+        <select name="countries">
+          <option value="0">Kraje</option>
+          <option *ngFor= "let coun of countries" [ngValue]="coun">
+          {{coun.name}}</option>
+        </select>
+        
+    </div>
+       <div class="col" style="width: 24%"  class="justify-content-center">
+            <select name="cities">
+              <option value="0">Miasta</option>
+              <option *ngFor= "let city of cities" [ngValue]="city">
+              {{city.name}}</option>
+            </select>
+    </div>
+
+    <div class="col" style="width: 24%"  class="justify-content-center">
+        <div class="col" style="width: 24%"  class="justify-content-center">
+            <select name="hotels">
+              <option value="0">Hotele</option>
+              <option *ngFor= "let hotel of hotels" [ngValue]="hotel">
+              {{hotel.name}}</option>
+            </select>
+    </div>
+      </div>
+  </div>
+  

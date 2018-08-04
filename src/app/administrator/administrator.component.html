@@ -1,6 +1,21 @@
+<!-- <form>
+  <input #continent type="text">
+  <button (click)="addContinent({continent});">dodaj</button>
+</form> -->
+
+<p>Dodaj nowy kontynent: 
+  <input type="text" name="continent_name" [(ngModel)]="name">
+  <button (click)="addContinent(name)">Save</button>
+</p>
+<div>
+  dodawany kontynent: {{name}}
+</div>
+<p></p>
+<div>
+    <button class="primary" (click)="getContinent()">GetCont</button>
+    Continent: {{id}} {{nameT}}
+</div>
+
 <p>
-  administrator works!
-
-
   <a class="btn btn-link" routerLink=''>powrót</a>
 </p>

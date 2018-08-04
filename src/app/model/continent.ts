@@ -1,4 +1,4 @@
-interface Continent{
-name: String;
-
+export class Continent{
+    public id: number;
+    public name: String;
 }
