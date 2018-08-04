@@ -5,14 +5,14 @@
 
 <p>Dodaj nowy kontynent: 
   <input type="text" name="continent_name" [(ngModel)]="name">
-  <button (click)="addContinent(continent)">Save</button>
+  <button (click)="addContinent(name)">Save</button>
 </p>
 <div>
   dodawany kontynent: {{name}}
 </div>
 <p></p>
 <div>
-    <button class="secondary" (click)="getContinent()">GetCont</button>
+    <button class="primary" (click)="getContinent()">GetCont</button>
     Continent: {{id}} {{nameT}}
 </div>
 
