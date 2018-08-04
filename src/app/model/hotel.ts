@@ -3,5 +3,5 @@ export class Hotel {
     public description:String;
     public name:String;
     public standard:String;
-    public id_city:number;
+    public cityEntity:number;
 }

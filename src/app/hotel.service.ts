@@ -28,7 +28,7 @@ getHotel() {
       this.hotels=data;
     },
     err => console.error(err),
-    () => console.log('done loading continents')
+    () => console.log('done loading hotels')
   );
 }
 }
