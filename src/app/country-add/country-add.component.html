@@ -1,0 +1,29 @@
+
+
+<p>
+  Wprowadź nazwę kraju:
+  <input type="text" name="country_name" [(ngModel)]="name"> 
+</p>
+
+<label for="continentName">Wybierz kontynent: </label>
+<select name="continents" [(ngModel)]="selectedValue" class="form-control">
+  <option value="0">wybierz kontynent</option>
+  <option *ngFor="let continent of continentService.continents" [ngValue]="continent.id">{{continent.name}}</option>
+</select>
+
+<button (click)="addCountry()">zapisz</button>
+
+<div>
+  <nav>
+    <a class="btn btn-link" href="/administrator/city-add/country-add/continent-add">dodaj nowy kontynent</a>
+  </nav>
+</div>
+
+
+
+<p>
+  <button (click)="goBack()" class="btn btn-success">powrót</button>
+
+  <a class="btn btn-success" routerLink=''>powrót do strony głównej</a>
+
+</p>

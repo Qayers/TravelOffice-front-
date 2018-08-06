@@ -1,0 +1,27 @@
+<p>
+  Wprowadź nazwę lotniska:
+  <input type="text" name="airport_name" [(ngModel)]="name">
+</p>
+
+<label for="citytoName">Wybierz miasto:</label>
+<select name="cities" [(ngModel)]="selectedValue"class="form-control">
+  <option value="0">wybierz miasto</option>
+  <option *ngFor="let city of cityService.cities" [ngValue]="city.id">{{city.name}}</option>
+</select>
+
+<button (click)="addAirport()">zapisz</button>
+
+<div>
+  <nav>
+    <a class="btn btn-link" href="/administrator/city-add">dodaj nowe miasto</a>
+  </nav>
+</div>
+
+
+
+<p>
+  <button (click)="goBack()" class="btn btn-success">powrót</button>
+
+  <a class="btn btn-success" routerLink=''>powrót do strony głównej</a>
+
+</p>

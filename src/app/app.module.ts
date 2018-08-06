@@ -13,6 +13,11 @@ import { KontaktComponent } from './kontakt/kontakt.component';
 import { RegulaminComponent } from './regulamin/regulamin.component';
 import { TitleComponent } from './title/title.component';
 import { BrowserComponent } from './browser/browser.component';
+import { ContinentAddComponent } from './continent-add/continent-add.component';
+import { CountryAddComponent } from './country-add/country-add.component';
+import { CityAddComponent } from './city-add/city-add.component';
+import { AirportAddComponent } from './airport-add/airport-add.component';
+import { HotelAddComponent } from './hotel-add/hotel-add.component';
 
 
 @NgModule({
@@ -25,7 +30,12 @@ import { BrowserComponent } from './browser/browser.component';
     KontaktComponent,
     RegulaminComponent,
     TitleComponent,
-    BrowserComponent
+    BrowserComponent,
+    ContinentAddComponent,
+    CountryAddComponent,
+    CityAddComponent,
+    AirportAddComponent,
+    HotelAddComponent
    
   ],
   imports: [
