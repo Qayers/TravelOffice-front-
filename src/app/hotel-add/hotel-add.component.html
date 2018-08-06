@@ -1,0 +1,43 @@
+<p>
+  Wprowadź nazwę hotelu:
+  <input type="text" name="hotel_name" [(ngModel)]="name">
+</p>
+
+<label for="citytoName">Wybierz miasto:</label>
+<select name="cities" [(ngModel)]="selectedValue" class="form-control">
+  <option value="0">wybierz miasto</option>
+  <option *ngFor="let city of cityService.cities" [ngValue]="city.id">{{city.name}}</option>
+</select>
+<div>
+  <nav>
+    <a class="btn btn-link" href="/administrator/city-add">dodaj nowe miasto</a>
+  </nav>
+</div>
+
+<p>
+  Wprowadź opis hotelu:
+  <input type="text" name="hotel_describe" [(ngModel)]="description">
+</p>
+
+<!-- <select name="hotels" [(ngModel)]="standard"class="form-control">
+        <option value="0">wybierz standard wyżywienia hotelu</option>
+        <option *ngFor="let hotel of hotelService.hotels" [ngValue]="hotel.standard">{{hotel.standard}}</option>
+      </select> -->
+<p>
+  Wprowadź typ wyżywienia:
+  <input type="text" name="standard" [(ngModel)]="standard">
+</p>
+
+<button (click)="addHotel()">zapisz</button>
+<!-- {{message}} -->
+
+
+
+<p>
+  <!-- <button (click)="goBack()" class="btn btn-success">powrót</button> -->
+
+  <a class="btn btn-success" href="/administrator">powrót</a>
+
+  <a class="btn btn-success" routerLink=''>powrót do strony głównej</a>
+
+</p>add .

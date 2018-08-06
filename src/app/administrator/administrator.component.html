@@ -1,79 +1,100 @@
 <h4>
   Dodaj wycieczke</h4>
 <div>
-  <form (ngSubmit)="onSubmit()" #tripForm="ngForm">
+  
     <div class="form-group">
       <ul>
         <li>
           <label for="count_of_days">Liczba dni</label>
-          <input type="text" class="form-control">
+          <input type="text"  [(ngModel)]="countOfDays" class="form-control">
         </li>
         <li>
           <label for="count_of_person>">Liczba osób</label>
-          <input type="text"class="form-control">
+          <input type="text"  [(ngModel)]="countOfPerson" class="form-control">
         </li>
         <li>
           <label for="departure_date">Data wylotu:</label>
-          <input type="date"class="form-control">
+          <input type="date"  [(ngModel)]="departureDate" class="form-control">
         </li>
         <li>
           <label for="return_date">Data powrotu:</label>
-          <input type="date"class="form-control">
+          <input type="date"  [(ngModel)]="returnDate" class="form-control">
         </li>
         <li>
           <label for="description">Opis:</label>
-          <input type="text"class="form-control">
+          <input type="text"  [(ngModel)]="description" class="form-control">
         </li>
         <li>
           <label for="price_for_adult">Cena dla dorosłych:</label>
-          <input type="number"class="form-control">
+          <input type="number"  [(ngModel)]="priceForAdult" class="form-control">
         </li>
         <li>
           <label for="price_for_child">Cena da dzieci:</label>
-          <input type="number"class="form-control">
+          <input type="number"  [(ngModel)]="priceForChild" class="form-control">
         </li>
         <li>
           <label for="id_airportfrom">Wybierz lotnisko wylotu:</label>
-
-
+          <select name="airports"  [(ngModel)]="airportEntityFrom" class="form-control">
+            <option value="0">wybierz lotnisko</option>
+            <option *ngFor="let airport of airportService.airports" [ngValue]="airport.id">{{airport.name}}</option>
+          </select>
+          <div>
+            <nav>
+              <a class="btn btn-link" href="/administrator/airport-add">dodaj nowe lotnisko</a>
+            </nav>
+          </div>
         </li>
-          <li>
+        <li>
           <label for="citytoName">Wybierz miasto docelowe:</label>
-          <select name="cities" class="form-control">
-              <option value="0">wybierz miasto</option>
-              <option *ngFor="let city of cityService.cities" [ngValue]="city">{{city.name}}</option>
+          <select name="cities"  [(ngModel)]="cityTo" class="form-control">
+            <option value="0">wybierz miasto</option>
+            <option *ngFor="let city of cityService.cities" [ngValue]="city.id">{{city.name}}</option>
+          </select>
+          <div>
+            <nav>
+              <a class="btn btn-link" href="/administrator/city-add">dodaj nowe miasto</a>
+            </nav>
+          </div>
+          </li>
+          <li>
+            <label for="id_airportto">wybierz lotnisko docelowe:</label>
+            <select name="airports"  [(ngModel)]="airportEntityTo" class="form-control">
+              <option value="0">wybierz lotnisko</option>
+              <option *ngFor="let airport of airportService.airports" [ngValue]="airport.id">{{airport.name}}</option>
             </select>
             <div>
+              <nav>
+                <a class="btn btn-link" href="/administrator/airport-add">dodaj nowe lotnisko</a>
+              </nav>
+            </div>
+
+
+          </li>
+          <li>
+            <label for="id_hotel">Wybierz hotel</label>
+            <select name="hotels"  [(ngModel)]="hotelEntity" class="form-control">
+                <option value="0">wybierz hotel</option>
+                <option *ngFor="let hotel of hotelService.hotels" [ngValue]="hotel.id">{{hotel.name}}</option>
+              </select>
+              <div>
                 <nav>
-                    <a class="btn btn-link" routerLink="/administrator/city-add">dodaj nowe miasto</a>
-                  </nav>
-                  <router-outlet></router-outlet>
-            </div>  
-        <li>
-          <label for="id_airportto">wybierz lotnisko docelowe:</label>
+                  <a class="btn btn-link" href="/administrator/hotel-add">dodaj nowy hotel</a>
+                </nav>
+              </div>
+  
 
-
-        </li>
-        <li>
-          <label for="id_hotel">Wybierz hotel</label>
-
-
-        </li>
-  <li>
-      <label for="promotion">Promocja:</label>
-      <input type="number"class="form-control">
-  </li>
+          </li>
+          <li>
+            <label for="promotion">Promocja:</label>
+            <input type="number"  [(ngModel)]="promotion" class="form-control">
+          </li>
       </ul>
     </div>
-    <button type="submit" class="btn btn-success">dodaj</button>
-  </form>
+    <button (click)="addTrip()">zapisz</button>
+  
 </div>
 <br>
 <p>
   <a class="btn btn-success" routerLink=''>powrót</a>
 </p>
-
-
-
-
 <p></p>

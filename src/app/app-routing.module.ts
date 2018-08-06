@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { ContinentAddComponent } from './continent-add/continent-add.component';
 import { CountryAddComponent } from './country-add/country-add.component';
 import { CityAddComponent } from './city-add/city-add.component';
+import {AirportAddComponent} from './airport-add/airport-add.component';
+import {HotelAddComponent} from './hotel-add/hotel-add.component';
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'administrator/city-add/country-add/continent-add', component: ContinentAddComponent },
   { path: 'administrator/city-add/country-add', component: CountryAddComponent },
   { path: 'administrator/city-add', component: CityAddComponent },
+  {path: 'administrator/airport-add', component: AirportAddComponent},
+  {path: 'administrator/hotel-add', component: HotelAddComponent},
   { path: '', redirectTo: '', pathMatch: 'full' }
 ];
 

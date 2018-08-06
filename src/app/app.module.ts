@@ -16,6 +16,8 @@ import { BrowserComponent } from './browser/browser.component';
 import { ContinentAddComponent } from './continent-add/continent-add.component';
 import { CountryAddComponent } from './country-add/country-add.component';
 import { CityAddComponent } from './city-add/city-add.component';
+import { AirportAddComponent } from './airport-add/airport-add.component';
+import { HotelAddComponent } from './hotel-add/hotel-add.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { CityAddComponent } from './city-add/city-add.component';
     BrowserComponent,
     ContinentAddComponent,
     CountryAddComponent,
-    CityAddComponent
+    CityAddComponent,
+    AirportAddComponent,
+    HotelAddComponent
    
   ],
   imports: [

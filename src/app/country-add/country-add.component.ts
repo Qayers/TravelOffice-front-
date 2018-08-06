@@ -5,6 +5,7 @@ import { ContinentSeries } from '../model/ContinentSeries';
 import { CountrySeries } from '../model/CountrySeries';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
+import { Country } from '../model/country';
 
 @Component({
   selector: 'app-country-add',
@@ -20,23 +21,28 @@ export class CountryAddComponent {
   public country_name;
   public continent_id;
 
+  public name;
+  public selectedValue;
+
   constructor(private continentService: ContinentService, private countryService: CountryService, private location: Location) { }
 
   continent = this.continentService.getContinent();
   country = this.countryService.getCountry();
 
 
-  addCountry(name, continentID) {
-    let country = { name: name };
+  addCountry() {
+    let country: Country = new Country();
+    country.name=this.name;
+    country.continentEntity=this.selectedValue;
+    
     this.countryService.addHttpContinent(country)
       .subscribe(
         data => {
           console.log(data);
-          this.country_name = name;
-          this.continent_id = continentID;
         },
         error => {
           console.error("error with saving country");
+          console.log(error);
           return Observable.throw(error);
         }
       )

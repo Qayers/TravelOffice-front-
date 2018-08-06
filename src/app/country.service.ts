@@ -19,8 +19,8 @@ export class CountryService {
   constructor(private http: HttpClient) {}
     
   addHttpContinent(country) {
-    let body = JSON.stringify(country);
-    return this.http.post<Country>('http://localhost:8080/addCoountry', country, httpOptions);
+    // let body = JSON.stringify(country);
+    return this.http.post<Country>('http://localhost:8080/addCountry', country);
   }
     getHttpCountry() {
       return this.http.get<CountrySeries>('http://localhost:8080/country');
