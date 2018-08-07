@@ -2,9 +2,9 @@
 
 <p>
     Wprowadź nazwę miasta:
-    <input type="text" name="city_name" [(ngModel)]="name"> 
+    <input type="text" name="city_name" [(ngModel)]="name">
   </p>
-  
+
 
 <label for="countryName">Wybierz kraj: </label>
 <select name="countries" [(ngModel)]="selectedValue" class="form-control">
@@ -13,17 +13,17 @@
   </select>
 
   <button (click)="addCity()">zapisz</button>
-            
+
 
 
 <div>
     <nav>
         <a class="btn btn-link" href="/administrator/city-add/country-add">dodaj nowy kraj</a>
       </nav>
-</div>  
+</div>
 <p>
-    <button (click)="goBack()" class="btn btn-success">powrót</button>
-  
+  <a class="btn btn-success" href="/administrator">powrót</a>
+
     <a class="btn btn-success" href=''>powrót do strony głównej</a>
-  
+
   </p>
