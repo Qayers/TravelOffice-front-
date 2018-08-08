@@ -6,14 +6,17 @@
   </p>
 
 
-<label for="countryName">Wybierz kraj: </label>
+<label>Wybierz kraj: </label>
 <select name="countries" [(ngModel)]="selectedValue" class="form-control">
     <option value="0">wybierz kraj</option>
     <option *ngFor="let country of countryService.countries" [ngValue]="country.id">{{country.name}}</option>
   </select>
 
   <button (click)="addCity()">zapisz</button>
+<div *ngIf="data">
 
+  {{messageDisplay}}
+</div>
 
 
 <div>

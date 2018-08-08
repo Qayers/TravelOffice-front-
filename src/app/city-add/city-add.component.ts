@@ -18,24 +18,25 @@ export class CityAddComponent  {
   public cities:CitySeries;
   public countries:CountrySeries;
 
-  public city_name;
+  public messageDisplay = "zapisano poprawnie!";
 
   public name;
   public selectedValue;
 
   constructor(private cityService: CityService, private countryService: CountryService, private location:Location) { }
 
-  country= this.countryService.getCountry(); 
+  country= this.countryService.getCountry();
 
   addCity() {
     let city: City = new City();
     city.name=this.name;
     city.countryEntity=this.selectedValue;
-    
+
     this.cityService.addHttpCity(city)
       .subscribe(
         data => {
           console.log(data);
+          {{this.messageDisplay}}
         },
         error => {
           console.error("error with saving city");
