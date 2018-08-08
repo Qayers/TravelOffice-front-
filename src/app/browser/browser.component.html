@@ -1,53 +1,75 @@
-<div class="row justify-content-center" >
+<div class="row justify-content-center">
 
   <div class="col" style="width: 18%" class="justify-content-center">
-        <select name="continents" [(ngModel)] = "selectedContinent" (change)="onChangeContinent(selectedContinent)">
-          <option value="0">Kontynenty</option>
-          <option *ngFor= "let continent of continentService.continents" [ngValue]="continent.id">
-          {{continent.name}}</option>
+    <select name="continents" [(ngModel)]="selectedContinent" (change)="onChangeContinent(selectedContinent)">
+      <option value="0">Kontynenty</option>
+      <option *ngFor="let continent of continentService.continents" [ngValue]="continent.id">
+        {{continent.name}}
+      </option>
 
-        </select>
+    </select>
 
-    </div>
+  </div>
 
-      <div class="col" style="width: 18%"  class="justify-content-center">
-          <select name="countries" [(ngModel)]="selectedCountry" (change)="onChangeCountry(selectedCountry)">
-            <option value="0">Kraje</option>
-            <option *ngFor= "let country of countryService.countries" [ngValue]="country.id">
-            {{country.name}}</option>
-          </select>
+  <div class="col" style="width: 18%" class="justify-content-center">
+    <select name="countries" [(ngModel)]="selectedCountry" (change)="onChangeCountry(selectedCountry)">
+      <option value="0">Kraje</option>
+      <option *ngFor="let country of countryService.countries" [ngValue]="country.id">
+        {{country.name}}
+      </option>
+    </select>
 
-      </div>
+  </div>
 
-       <div class="col" style="width: 18%"  class="justify-content-center">
-            <select name="cities" [(ngModel)]="selectedCity" (change)="onChangeCity(selectedCity)">
-              <option value="0">Miasta</option>
-              <option *ngFor= "let city of cityService.cities" [ngValue]="city.id">
-              {{city.name}}</option>
-            </select>
-    </div>
+  <div class="col" style="width: 18%" class="justify-content-center">
+    <select name="cities" [(ngModel)]="selectedCity" (change)="onChangeCity(selectedCity)">
+      <option value="0">Miasta</option>
+      <option *ngFor="let city of cityService.cities" [ngValue]="city.id">
+        {{city.name}}
+      </option>
+    </select>
+  </div>
 
-    <div class="col" style="width: 18%"  class="justify-content-center">
-        <div class="col" style="width: 24%"  class="justify-content-center">
-            <select name="hotels"[(ngModel)]="selectedHotel" (change)="onChangeHotel(selectedHotel)">
-              <option value="0">Hotele</option>
-              <option *ngFor= "let hotel of hotelService.hotels" [ngValue]="hotel.id">
-              {{hotel.name}}</option>
-            </select>
-    </div>
-      </div>
-  <div class="col" style="width: 24%"  class="justify-content-center">
-    <div class="col" style="width: 18%"  class="justify-content-center">
-      <select name="airports"[(ngModel)]="selectedAirport" (change)="onChangeAirport(selectedAirport)">
-        <option value="0">Lotniska</option>
-        <option *ngFor= "let airport of airportService.airports" [ngValue]="airport.id">
-          {{airport.name}}</option>
+  <div class="col" style="width: 18%" class="justify-content-center">
+    <div class="col" style="width: 24%" class="justify-content-center">
+      <select name="hotels" [(ngModel)]="selectedHotel" (change)="onChangeHotel(selectedHotel)">
+        <option value="0">Hotele</option>
+        <option *ngFor="let hotel of hotelService.hotels" [ngValue]="hotel.id">
+          {{hotel.name}}
+        </option>
       </select>
     </div>
   </div>
+  <div class="col" style="width: 24%" class="justify-content-center">
+    <div class="col" style="width: 18%" class="justify-content-center">
+      <select name="airports" [(ngModel)]="selectedAirport" (change)="onChangeAirport(selectedAirport)">
+        <option value="0">Lotniska</option>
+        <option *ngFor="let airport of airportService.airports" [ngValue]="airport.id">
+          {{airport.name}}
+        </option>
+      </select>
+    </div>
   </div>
-{{selectedContinent}}
-{{selectedCountry}}
-{{selectedCity}}
-{{selectedHotel}}
-{{selectedAirport}}
+</div>
+_______________
+To Do:
+Hotel:{{selectedHotel}}
+Lotnisko: {{selectedAirport}}
+_________________
+<table (change)="onChangeContinent(selectedContinent)" (change)="onChangeCountry(selectedCountry)"
+       (change)="onChangeCity(selectedCity)">
+  <thead>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let trip of tripService.trips">
+    <td>Do miasta:{{trip.cityTo}} Liczba osób: {{trip.countOfPerson}} Opis:{{trip.description}} Data Wylotu
+      :{{trip.departureDate}}
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+
