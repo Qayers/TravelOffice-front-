@@ -6,6 +6,7 @@ import { CountrySeries } from '../model/CountrySeries';
 import { Location } from '@angular/common';
 import { City } from '../model/city';
 import { Observable } from 'rxjs';
+import {PreviousRouteService} from "../previous-route.service";
 
 
 @Component({
@@ -13,7 +14,9 @@ import { Observable } from 'rxjs';
   templateUrl: './city-add.component.html',
   styleUrls: ['./city-add.component.css']
 })
-export class CityAddComponent  {
+export class CityAddComponent{
+
+
 
   public cities:CitySeries;
   public countries:CountrySeries;
@@ -22,8 +25,13 @@ export class CityAddComponent  {
 
   public name;
   public selectedValue;
+  public previousUrl = this.previousRouteService.getPreviousUrl()+"/";
 
-  constructor(private cityService: CityService, private countryService: CountryService, private location:Location) { }
+
+  constructor(private cityService: CityService,
+              private countryService: CountryService,
+              private location:Location,
+              private previousRouteService: PreviousRouteService) { }
 
   country= this.countryService.getCountry();
 
@@ -37,6 +45,7 @@ export class CityAddComponent  {
         data => {
           console.log(data);
           {{this.messageDisplay}}
+          console.log(this.previousRouteService.getPreviousUrl());
         },
         error => {
           console.error("error with saving city");
@@ -47,6 +56,7 @@ export class CityAddComponent  {
   }
 
   goBack(): void {
-    this.location.back();
+    // this.location.back();
+    this.previousRouteService.getPreviousUrl();
   }
 }
