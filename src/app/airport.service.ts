@@ -42,7 +42,6 @@ export class AirportService {
   }
 
 
-
   getAirportFindByCityEntity_Id(id: number) {
     this.getHttpAirportFindByCityEntity_Id(id).subscribe(
       data => {
@@ -53,4 +52,5 @@ export class AirportService {
     );
   }
 }
+
 

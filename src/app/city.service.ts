@@ -1,19 +1,18 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {CitySeries} from './model/CitySeries';
-import { City } from './model/city';
+import {City} from './model/city';
 
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
- };
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 
 @Injectable({
-  providedIn: 'root'
- }
- )
+    providedIn: 'root'
+  }
+)
 export class CityService {
 
   public cities: CitySeries;
