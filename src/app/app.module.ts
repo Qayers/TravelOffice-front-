@@ -18,7 +18,7 @@ import { CountryAddComponent } from './country-add/country-add.component';
 import { CityAddComponent } from './city-add/city-add.component';
 import { AirportAddComponent } from './airport-add/airport-add.component';
 import { HotelAddComponent } from './hotel-add/hotel-add.component';
-
+import {PreviousRouteService} from "./previous-route.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { HotelAddComponent } from './hotel-add/hotel-add.component';
     CityAddComponent,
     AirportAddComponent,
     HotelAddComponent
-   
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ import { HotelAddComponent } from './hotel-add/hotel-add.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PreviousRouteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
