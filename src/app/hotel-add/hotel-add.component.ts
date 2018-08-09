@@ -16,7 +16,8 @@ export class HotelAddComponent {
 
   public cities: CitySeries;
 
-  public airport_name;
+  public messageDisplay;
+
 
   public name;
   public selectedValue;
@@ -40,6 +41,7 @@ export class HotelAddComponent {
       .subscribe(
         data => {
           console.log(data);
+          {{this.messageDisplay = "dodano " + data.name}}
         },
         error => {
           console.error("error with saving hotel");

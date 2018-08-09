@@ -13,10 +13,9 @@
   </select>
 
   <button (click)="addCity()">zapisz</button>
-<!--<div *ngIf="data">-->
-
-  <!--{{messageDisplay}}-->
-<!--</div>-->
+<div >
+  {{messageDisplay}}
+</div>
 
 
 <div>
@@ -25,8 +24,7 @@
       </nav>
 </div>
 <p>
-<a class="btn btn-success" href="/administrator">powrót</a>
-  <!--<a class="btn btn-success" href="previousUrl">powrót</a>-->
+<a class="btn btn-success" (click)="goBack()">powrót</a>
 
 
 

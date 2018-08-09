@@ -16,7 +16,7 @@ export class AirportAddComponent  {
 
   public cities: CitySeries;
 
-  public airport_name;
+  public messageDisplay;
 
   public name;
   public selectedValue;
@@ -31,11 +31,13 @@ export class AirportAddComponent  {
     let airport: Airport = new Airport();
     airport.name=this.name;
     airport.cityEntity=this.selectedValue;
-    
+
     this.airportService.addHttpAirport(airport)
       .subscribe(
         data => {
           console.log(data);
+          {{this.messageDisplay = "dodano " + data.name}}
+
         },
         error => {
           console.error("error with saving airport");

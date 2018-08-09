@@ -42,7 +42,7 @@ export class AdministratorComponent {
   public airportEntityTo;
   public hotelEntity;
 
-  private message;
+  public messageDisplay;
 
   constructor(private continentService: ContinentService,
     private cityService: CityService,
@@ -51,7 +51,7 @@ export class AdministratorComponent {
     private hotelService: HotelService,
     private tripService: TripService) { }
 
- 
+
   city = this.cityService.getCity();
   country = this.countryService.getCountry();
   airport = this.airportService.getAirport();
@@ -77,7 +77,7 @@ export class AdministratorComponent {
       .subscribe(
         data => {
           console.log(data);
-          this.message = "zapisano"
+          {{this.messageDisplay = "dodano " + data.name}}
         },
         error => {
           console.error("error with saving trip");

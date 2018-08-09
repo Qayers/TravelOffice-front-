@@ -18,11 +18,9 @@ export class CountryAddComponent {
   public continents: ContinentSeries;
   public countries: CountrySeries;
 
-  public country_name;
-  public continent_id;
-
   public name;
   public selectedValue;
+  public messageDisplay;
 
   constructor(private continentService: ContinentService, private countryService: CountryService, private location: Location) { }
 
@@ -34,11 +32,13 @@ export class CountryAddComponent {
     let country: Country = new Country();
     country.name=this.name;
     country.continentEntity=this.selectedValue;
-    
+
     this.countryService.addHttpContinent(country)
       .subscribe(
         data => {
           console.log(data);
+          {{this.messageDisplay = "dodano " + data.name}}
+
         },
         error => {
           console.error("error with saving country");
