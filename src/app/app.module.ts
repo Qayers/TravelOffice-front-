@@ -19,7 +19,7 @@ import { CityAddComponent } from './city-add/city-add.component';
 import { AirportAddComponent } from './airport-add/airport-add.component';
 import { HotelAddComponent } from './hotel-add/hotel-add.component';
 import { StopkaComponent } from './stopka/stopka.component';
-
+import {PreviousRouteService} from "./previous-route.service";
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { StopkaComponent } from './stopka/stopka.component';
     AirportAddComponent,
     HotelAddComponent,
     StopkaComponent
-   
+
   ],
   imports: [
     BrowserModule,
@@ -46,7 +46,7 @@ import { StopkaComponent } from './stopka/stopka.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PreviousRouteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
