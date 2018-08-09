@@ -18,6 +18,7 @@ import { CountryAddComponent } from './country-add/country-add.component';
 import { CityAddComponent } from './city-add/city-add.component';
 import { AirportAddComponent } from './airport-add/airport-add.component';
 import { HotelAddComponent } from './hotel-add/hotel-add.component';
+import { StopkaComponent } from './stopka/stopka.component';
 import {PreviousRouteService} from "./previous-route.service";
 
 @NgModule({
@@ -35,7 +36,8 @@ import {PreviousRouteService} from "./previous-route.service";
     CountryAddComponent,
     CityAddComponent,
     AirportAddComponent,
-    HotelAddComponent
+    HotelAddComponent,
+    StopkaComponent
 
   ],
   imports: [

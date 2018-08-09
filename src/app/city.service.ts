@@ -42,7 +42,6 @@ export class CityService {
     )
   }
 
-
   getCityFindByCountryEntity_Id(id: number) {
     this.getHttpCityFindByCountryEntity_Id(id).subscribe(
       data => {
