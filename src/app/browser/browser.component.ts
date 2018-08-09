@@ -31,7 +31,7 @@ export class BrowserComponent implements OnInit {
   country;
   city;
   hotel;
-  airport;
+  airport=this.airportService.getAirport();
   trip;
   trips: any;
 
@@ -45,6 +45,7 @@ export class BrowserComponent implements OnInit {
     this.selectedContinent = selectedContinent;
     this.country = this.countryService.getCountryFindByContinentEntity_id(this.selectedContinent);
     this.trip = this.tripService.getTripFindByContinent_Id(this.selectedContinent);
+
   }
 
   onChangeCountry(selectedCountry) {
@@ -65,13 +66,16 @@ export class BrowserComponent implements OnInit {
   onChangeHotel(selectedHotel) {
     console.log(selectedHotel);
     this.selectedHotel = selectedHotel;
+    this.trip=this.tripService.getTripFindByHotel_Id(this.selectedHotel)
   }
-
+/* to delete
   onChangeAirport(selectedAirport) {
     console.log(selectedAirport);
     this.selectedAirport = selectedAirport;
+    this.trip=this.tripService.getTripFindByHotel_Id(this.selectedAirport)
 
   }
+*/
 }
 
 

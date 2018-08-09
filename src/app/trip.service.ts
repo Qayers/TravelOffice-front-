@@ -37,6 +37,10 @@ export class TripService {
     return this.http.get<TripSeries>('http://localhost:8080/tripFindByContinent_Id/' + id);
   }
 
+  getHttpTripHotel_Id(id: number) {
+    return this.http.get<TripSeries>('http://localhost:8080/tripFindByHotel_Id/' + id);
+  }
+
   getTrip() {
     this.getHttpTrip().subscribe(
       data => {
@@ -77,6 +81,15 @@ export class TripService {
     );
   }
 
+  getTripFindByHotel_Id(id: number) {
+    this.getHttpTripHotel_Id(id).subscribe(
+      data => {
+        this.trips = data;
+      },
+      err => console.error(err),
+      () => console.log('done loading trips')
+    );
+  }
 }
 
 
