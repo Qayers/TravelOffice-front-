@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 import { Location } from '@angular/common';
 
-import { Injectable } from '@angular/core';
-import { Continent } from '../model/continent';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
 import { ContinentSeries } from '../model/ContinentSeries';
 import { ContinentService } from '../continent.service';
 
@@ -18,6 +13,8 @@ import { ContinentService } from '../continent.service';
 export class ContinentAddComponent {
   public continents: ContinentSeries;
   public continent_name;
+  public messageDisplay;
+
 
   constructor(private continentService: ContinentService, private location: Location) { }
 
@@ -28,7 +25,8 @@ export class ContinentAddComponent {
       .subscribe(
         data => {
           console.log(data);
-          this.continent_name = name;
+          {{this.messageDisplay = "dodano " + data.name}}
+
         },
         error => {
           console.error("error with saving continent");

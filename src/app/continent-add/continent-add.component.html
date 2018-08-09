@@ -5,6 +5,9 @@
   <input type="text" name="continent_name" [(ngModel)]="name">
   <button (click)="continentService.addContinent(name)">zapisz</button>
 </p>
+<div >
+  {{messageDisplay}}
+</div>
 <p>
   <a class="btn btn-success" href="/administrator/city-add/country-add">powrót</a>
 
